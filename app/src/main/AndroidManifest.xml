@@ -9,20 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Persetujuan_Tahunan"
-            android:label="Persetujuan Cuti Tahunan">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/List_Pengajuan_Cuti">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Keterangan_Approval" />
-        <activity android:name=".Keterangan_Penolakan" />
-        <activity android:name=".Persetujuan_Cuti_Besar" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Persetujuan_Hamil" >
-        </activity>
+        <activity
+            android:name=".Keterangan_Approval"
+            android:label="@string/Keterangan_Approval" />
+        <activity
+            android:name=".Keterangan_Penolakan"
+            android:label="@string/Keterangan_Penolakan" />
+        <activity
+            android:name=".Persetujuan_Hamil"
+            android:label="@string/Persetujuan_Cuti_Hamil" />
+        <activity
+            android:name=".Persetujuan_Tahunan"
+            android:label="@string/Persetujuan_Cuti_Tahunan" />
+        <activity
+            android:name=".Persetujuan_Cuti_Besar"
+            android:label="@string/Persetujuan_Cuti_Besar"></activity>
     </application>
 
 </manifest>

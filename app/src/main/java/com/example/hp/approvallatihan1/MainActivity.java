@@ -1,50 +1,92 @@
 package com.example.hp.approvallatihan1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements UserAdapter.OnClickItemListener{
 
+    private List<UserModel> mListUser = new ArrayList<>();
     private RecyclerView rvUser;
-    private List<UserModel> mListUser;
     private UserAdapter mUserAdapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = findViewById(R.id.toolbar);
         rvUser = (RecyclerView) findViewById(R.id.recyclerview);
-        mListUser = new ArrayList<>();
 
-        UserModel user1 = new UserModel("Veni", "20");
-        UserModel user2 = new UserModel("Nanang", "20");
-        UserModel user3 = new UserModel("Eni", "19");
-        UserModel user4 = new UserModel("Reza", "22");
-        UserModel user5 = new UserModel("Nazar", "20");
-        UserModel user6 = new UserModel("Fani", "21");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mListUser.add(user1);
-        mListUser.add(user2);
-        mListUser.add(user3);
-        mListUser.add(user4);
-        mListUser.add(user5);
-        mListUser.add(user6);
-
-        mUserAdapter = new UserAdapter(mListUser, this);
-        rvUser.setLayoutManager(new LinearLayoutManager(this));
+        mUserAdapter = new UserAdapter(mListUser);
+        mUserAdapter.setOnClickItemListener(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        rvUser.setLayoutManager(mLayoutManager);
         rvUser.setItemAnimator(new DefaultItemAnimator());
+        rvUser.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         rvUser.setAdapter(mUserAdapter);
-        mUserAdapter.notifyDataSetChanged();
 
+        prepareUserData();
+    }
+
+    private void prepareUserData() {
+        UserModel userModel = new UserModel("Veni Fela Yanuarita", "Pengajuan Cuti Besar", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Eni Nofita Sari", "Pengajuan Cuti Hamil", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Reza Amalia", "Pengajuan Cuti Hamil", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Narto Hidayat", "Pengajuan Cuti Tahunan", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Renaldi Pramudia", "Pengajuan Cuti Besar", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Fani Enda", "Pengajuan Cuti Tahunan", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Nanang Hidayat", "Pengajuan Cuti Hamil", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Aldo Galih", "Pengajuan Cuti Tahunan", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Tias Karisma", "Pengajuan Cuti Hamil", "2018");
+        mListUser.add(userModel);
+
+        userModel = new UserModel("Alif fitrawan", "Pengajuan Cuti Besar", "2018");
+        mListUser.add(userModel);
+
+        mUserAdapter.notifyDataSetChanged();
+    }
+
+
+
+    @Override
+    public void onClickItem(UserModel usermodel) {
+        // TODO: 30/07/2018 buatkan intent ke activity selanjutnya
+
+        Toast.makeText(this, usermodel.getName(), Toast.LENGTH_SHORT).show();
     }
 }

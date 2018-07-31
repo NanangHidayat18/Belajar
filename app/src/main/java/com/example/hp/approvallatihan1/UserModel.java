@@ -2,26 +2,33 @@ package com.example.hp.approvallatihan1;
 
 public class UserModel {
     private String name;
-    private String age;
+    private String cuti;
+    private String year;
 
-    public UserModel(String name, String age){
+    public UserModel(String name, String cuti, String year){
         this.name= name;
-        this.age= age;
+        this.cuti= cuti;
+        this.year= year;
 
     }
+
     public UserModel(){
 
     }
-    public String getName(){
-        return name;
-    }
+    public String getName(){ return name; }
     public void setName(String name){
         this.name= name;
     }
-    public String getAge(){
-        return age;
+    public String getCuti(){
+        return cuti;
     }
-    public void setAge(String age) {
-        this.age = age;
+    public void setCuti(String cuti) {
+        this.cuti = cuti;
+    }
+    public String getYear(){
+        return year;
+    }
+    public void setYear(String year) {
+        this.year = year;
     }
 }

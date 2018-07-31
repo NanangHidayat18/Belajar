@@ -3,5 +3,8 @@
     <color name="colorPrimary">#2ca3e4</color>
     <color name="colorPrimaryDark">#4499dd</color>
     <color name="colorAccent">#ffae0c</color>
+    <color name="white">#ffffff</color>
+    <color name="year">#999999</color>
+    <color name="title">#222222</color>
 
 </resources>

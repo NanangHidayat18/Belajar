@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Approval Cuti</string>
     <string name="tanggal_acc">Tanggal ACC</string>
+    <string name="Persetujuan_Cuti_Hamil">Persetujuan Cuti Hamil</string>
+    <string name="Persetujuan_Cuti_Tahunan">Persetujuan Cuti Tahunan</string>
+    <string name="Persetujuan_Cuti_Besar">Persetujuan Cuti Besar</string>
+    <string name="List_Pengajuan_Cuti">List Pengajuan Cuti</string>
+    <string name="Keterangan_Approval">Keterangan Approval</string>
+    <string name="Keterangan_Penolakan">Keterangan Penolakan</string>
+
+    <string-array name="list_cuti">
+        <item> </item>
+        <item>Cuti Tahunan</item>
+        <item>Cuti Hamil</item>
+        <item>Cuti Besar</item>
+    </string-array>
+
 </resources>

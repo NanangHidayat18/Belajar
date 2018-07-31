@@ -43,8 +43,8 @@
                     android:layout_marginBottom="10dp"
                     android:inputType="text"
                     android:hint="Hak cuti"
-                    android:textColor="#bfbbbb"
-                    android:textSize="12sp" />
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -60,8 +60,8 @@
                     android:layout_marginBottom="10dp"
                     android:inputType="text"
                     android:hint="Sisa cuti"
-                    android:textColor="#bfbbbb"
-                    android:textSize="12sp" />
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -79,9 +79,9 @@
                     android:inputType="date"
                     android:longClickable="false"
                     android:hint="dd-mm-yyyy"
-                    android:textColor="#bfbbbb"
+                    android:textColor="#000"
                     android:textIsSelectable="false"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <CheckBox
                     android:id="@+id/checkbox1"
@@ -89,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="Telah Dibaca"
+                    android:textSize="18sp"
                     android:textColor="@android:color/background_dark" />
 
                 <LinearLayout

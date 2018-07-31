@@ -41,13 +41,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:focusable="false"
-                    android:inputType="date"
-                    android:longClickable="false"
                     android:hint="dd-mm-yyyy"
-                    android:textColor="#bfbbbb"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:textColor="#000"
                     android:textIsSelectable="false"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -61,10 +61,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:inputType="text"
                     android:hint="jumlah hari"
-                    android:textColor="#bfbbbb"
-                    android:textSize="12sp" />
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -79,12 +79,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:focusable="false"
+                    android:hint="dd-mm-yyyy"
                     android:inputType="date"
                     android:longClickable="false"
-                    android:hint="dd-mm-yyyy"
-                    android:textColor="#bfbbbb"
+                    android:textColor="#000"
                     android:textIsSelectable="false"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -99,12 +99,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:focusable="false"
+                    android:hint="dd-mm-yyyy"
                     android:inputType="date"
                     android:longClickable="false"
-                    android:hint="dd-mm-yyyy"
-                    android:textColor="#bfbbbb"
+                    android:textColor="#000"
                     android:textIsSelectable="false"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -118,12 +118,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:inputType="text"
-                    android:lines="10"
-                    android:maxLines="10"
                     android:hint="Alasan mengajukan cuti"
-                    android:textColor="#bfbbbb"
-                    android:textSize="12sp" />
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -137,12 +134,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:inputType="text"
-                    android:lines="10"
-                    android:maxLines="10"
                     android:hint="Tempat yang bisa dihubungi"
-                    android:textColor="#bfbbbb"
-                    android:textSize="12sp" />
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -156,10 +150,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:inputType="text"
                     android:hint="Telp"
-                    android:textColor="#bfbbbb"
-                    android:textSize="12sp" />
+                    android:inputType="phone"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Penyerahan Tugas :"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/namapengganti"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Kepada"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <CheckBox
                     android:id="@+id/checkbox1"
@@ -167,7 +178,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="Telah Dibaca :"
-                    android:textColor="@android:color/background_dark" />
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="18sp" />
 
         <LinearLayout
             android:id="@+id/parent2"
