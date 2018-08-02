@@ -20,7 +20,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/List_Pengajuan_Cuti"
+                android:text="@string/Daftar_Cuti"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 

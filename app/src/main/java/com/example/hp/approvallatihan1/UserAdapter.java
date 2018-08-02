@@ -1,5 +1,7 @@
 package com.example.hp.approvallatihan1;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +70,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         UserModel userModel = mlListUser.get(position);
         holder.bind(userModel);
+
     }
 
     @Override
@@ -75,5 +78,3 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         return mlListUser.size();
     }
 }
-
-

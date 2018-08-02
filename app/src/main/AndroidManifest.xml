@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/List_Pengajuan_Cuti">
+            android:label="@string/Daftar_Cuti">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,19 +20,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Keterangan_Approval"
+            android:name=".ApprovalActivity"
             android:label="@string/Keterangan_Approval" />
         <activity
-            android:name=".Keterangan_Penolakan"
+            android:name=".PenolakanActivity"
             android:label="@string/Keterangan_Penolakan" />
         <activity
-            android:name=".Persetujuan_Hamil"
+            android:name=".PersetujuanHamilActivity"
             android:label="@string/Persetujuan_Cuti_Hamil" />
         <activity
-            android:name=".Persetujuan_Tahunan"
+            android:name=".PersetujuanTahunanActivity"
             android:label="@string/Persetujuan_Cuti_Tahunan" />
         <activity
-            android:name=".Persetujuan_Cuti_Besar"
+            android:name=".PersetujuanCutiBesarActivity"
             android:label="@string/Persetujuan_Cuti_Besar"></activity>
     </application>
 

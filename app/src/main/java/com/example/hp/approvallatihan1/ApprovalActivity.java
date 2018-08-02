@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Keterangan_Approval extends AppCompatActivity {
+public class ApprovalActivity extends AppCompatActivity {
     private Button btnkirim;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class Keterangan_Approval extends AppCompatActivity {
                 .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // jika tombol diklik, maka akan menutup activity ini
-                        Keterangan_Approval.this.finish();
+                        ApprovalActivity.this.finish();
                     }
                 })
                 .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {

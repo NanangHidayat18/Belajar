@@ -8,11 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.app.DatePickerDialog;
 import android.view.View;
-import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class Persetujuan_Tahunan extends AppCompatActivity implements View.OnClickListener {
+public class PersetujuanTahunanActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button button1, button2;
     EditText etanggalacc, ejumlahacc, etanggalmulaiacc, etanggalakhiracc;
@@ -70,7 +69,7 @@ public class Persetujuan_Tahunan extends AppCompatActivity implements View.OnCli
 
 
                 } else {
-                    Intent i = new Intent(getApplicationContext(), Keterangan_Penolakan.class);
+                    Intent i = new Intent(getApplicationContext(), PenolakanActivity.class);
                     startActivity(i);
                 }
             }
@@ -104,7 +103,7 @@ public class Persetujuan_Tahunan extends AppCompatActivity implements View.OnCli
 
 
                 } else {
-                    Intent i = new Intent(getApplicationContext(), Keterangan_Approval.class);
+                    Intent i = new Intent(getApplicationContext(), ApprovalActivity.class);
                     startActivity(i);
                 }
             }
@@ -146,12 +145,12 @@ public class Persetujuan_Tahunan extends AppCompatActivity implements View.OnCli
     }
 
     public void reject (View view){
-        Intent intent = new Intent(Persetujuan_Tahunan.this, Keterangan_Penolakan.class);
+        Intent intent = new Intent(PersetujuanTahunanActivity.this, PenolakanActivity.class);
         startActivity(intent);
     }
 
     public void approval (View view){
-        Intent intent = new Intent(Persetujuan_Tahunan.this, Keterangan_Approval.class);
+        Intent intent = new Intent(PersetujuanTahunanActivity.this, ApprovalActivity.class);
         startActivity(intent);
     }
 }

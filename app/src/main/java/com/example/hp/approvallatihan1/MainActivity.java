@@ -8,19 +8,19 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements UserAdapter.OnClickItemListener{
+public class MainActivity extends AppCompatActivity implements UserAdapter.OnClickItemListener {
 
     private List<UserModel> mListUser = new ArrayList<>();
+    private List<UserModel> mListUserForAdapter = new ArrayList<>();
     private RecyclerView rvUser;
     private UserAdapter mUserAdapter;
     private Toolbar toolbar;
@@ -30,8 +30,11 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getUserData();
+
         toolbar = findViewById(R.id.toolbar);
         rvUser = (RecyclerView) findViewById(R.id.recyclerview);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner_sortir);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -45,48 +48,104 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnCli
         rvUser.setAdapter(mUserAdapter);
 
         prepareUserData();
+
+        String[] filterCuti = getResources().getStringArray(R.array.list_cuti);
+        spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, filterCuti));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                switch (position) {
+                    case 0:
+                        prepareUserData();
+                        break;
+                    case 1:
+                        sortByCutiTahunan();
+                        break;
+                    case 2:
+                        sortByCutiHamil();
+                        break;
+                    case 3:
+                        sortByCutiBesar();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                return;
+            }
+        });
+
     }
 
-    private void prepareUserData() {
-        UserModel userModel = new UserModel("Veni Fela Yanuarita", "Pengajuan Cuti Besar", "2018");
-        mListUser.add(userModel);
+    private List<UserModel> getDataCuti() {
+        return null;
+    }
 
-        userModel = new UserModel("Eni Nofita Sari", "Pengajuan Cuti Hamil", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Reza Amalia", "Pengajuan Cuti Hamil", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Narto Hidayat", "Pengajuan Cuti Tahunan", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Renaldi Pramudia", "Pengajuan Cuti Besar", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Fani Enda", "Pengajuan Cuti Tahunan", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Nanang Hidayat", "Pengajuan Cuti Hamil", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Aldo Galih", "Pengajuan Cuti Tahunan", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Tias Karisma", "Pengajuan Cuti Hamil", "2018");
-        mListUser.add(userModel);
-
-        userModel = new UserModel("Alif fitrawan", "Pengajuan Cuti Besar", "2018");
-        mListUser.add(userModel);
-
+    private void sortByCutiTahunan() {
+        mListUser.clear();
+        for (UserModel userModel : mListUserForAdapter) {
+            if (userModel.getCuti().contains("Tahunan")) {
+                mListUser.add(userModel);
+            }
+        }
         mUserAdapter.notifyDataSetChanged();
     }
 
+    private void sortByCutiHamil() {
+        mListUser.clear();
+        for (UserModel userModel : mListUserForAdapter) {
+            if (userModel.getCuti().contains("Hamil")) {
+                mListUser.add(userModel);
+            }
+        }
+        mUserAdapter.notifyDataSetChanged();
+    }
 
+    private void sortByCutiBesar() {
+        mListUser.clear();
+        for (UserModel userModel : mListUserForAdapter) {
+            if (userModel.getCuti().contains("Besar")) {
+                mListUser.add(userModel);
+            }
+        }
+        mUserAdapter.notifyDataSetChanged();
+    }
+
+    private void getUserData() {
+        mListUserForAdapter = Arrays.asList(
+                new UserModel("Veni Fela Yanuarita", "Pengajuan Cuti Besar", "2018"),
+                new UserModel("Eni Nofita Sari", "Pengajuan Cuti Hamil", "2018"),
+                new UserModel("Reza Amalia", "Pengajuan Cuti Hamil", "2018"),
+                new UserModel("Narto Hidayat", "Pengajuan Cuti Tahunan", "2018"),
+                new UserModel("Renaldi Pramudia", "Pengajuan Cuti Hamil", "2018"),
+                new UserModel("Fani Enda", "Pengajuan Cuti Tahunan", "2018"),
+                new UserModel("Nanang Hidayat", "Pengajuan Cuti Tahunan", "2018"),
+                new UserModel("Aldo Galih", "Pengajuan Cuti Besar", "2018"),
+                new UserModel("Tias Karisma", "Pengajuan Cuti Hamil", "2018"),
+                new UserModel("Alif fitrawan", "Pengajuan Cuti Besar", "2018")
+        );
+    }
+
+    private void prepareUserData() {
+        mListUser.clear();
+        mListUser.addAll(mListUserForAdapter);
+        mUserAdapter.notifyDataSetChanged();
+    }
 
     @Override
     public void onClickItem(UserModel usermodel) {
-        // TODO: 30/07/2018 buatkan intent ke activity selanjutnya
+        // TODO: 31/07/2018 buatkan intent ke activity selanjutnya
 
-        Toast.makeText(this, usermodel.getName(), Toast.LENGTH_SHORT).show();
+        Intent intent;
+        if(usermodel.getCuti().contains("Tahunan")){
+            intent = new Intent(this, PersetujuanTahunanActivity.class);
+        }else if(usermodel.getCuti().contains("Hamil")){
+            intent = new Intent(this, PersetujuanHamilActivity.class);
+        }else{
+            intent = new Intent(this, PersetujuanCutiBesarActivity.class);
+        }
+
+        startActivity(intent);
     }
 }

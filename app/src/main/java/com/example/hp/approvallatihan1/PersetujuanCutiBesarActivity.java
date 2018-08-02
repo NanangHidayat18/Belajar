@@ -11,7 +11,7 @@ import android.view.View;
 
 import java.util.Calendar;
 
-public class Persetujuan_Cuti_Besar extends AppCompatActivity implements View.OnClickListener{
+public class PersetujuanCutiBesarActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button button1, button2;
     EditText ehakcuti, esisacuti, etanggalapprove;
@@ -50,31 +50,28 @@ public class Persetujuan_Cuti_Besar extends AppCompatActivity implements View.On
                     etanggalapprove.setError("Tanggal diperlukan!");
                     etanggalapprove.requestFocus();
                 } else {
-                    Intent i = new Intent(getApplicationContext(), Keterangan_Penolakan.class);
+                    Intent i = new Intent(getApplicationContext(), PenolakanActivity.class);
                     startActivity(i);
                 }
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (TextUtils.isEmpty(ehakcuti.getText().toString())) {
-                    ehakcuti.setError(null);
-                    ehakcuti.setError("Masukkan hak cuti!");
-                    ehakcuti.requestFocus();
-                } else if (TextUtils.isEmpty(esisacuti.getText().toString())) {
-                    esisacuti.setError(null);
-                    esisacuti.setError("Masukkan sisa cuti!");
-                    esisacuti.requestFocus();
-                } else if (TextUtils.isEmpty(etanggalapprove.getText().toString())) {
-                    etanggalapprove.setError(null);
-                    etanggalapprove.setError("Tanggal diperlukan!");
-                    etanggalapprove.requestFocus();
-                } else {
-                    Intent i = new Intent(getApplicationContext(), Keterangan_Approval.class);
-                    startActivity(i);
-                }
+        button2.setOnClickListener(view -> {
+            if (TextUtils.isEmpty(ehakcuti.getText().toString())) {
+                ehakcuti.setError(null);
+                ehakcuti.setError("Masukkan hak cuti!");
+                ehakcuti.requestFocus();
+            } else if (TextUtils.isEmpty(esisacuti.getText().toString())) {
+                esisacuti.setError(null);
+                esisacuti.setError("Masukkan sisa cuti!");
+                esisacuti.requestFocus();
+            } else if (TextUtils.isEmpty(etanggalapprove.getText().toString())) {
+                etanggalapprove.setError(null);
+                etanggalapprove.setError("Tanggal diperlukan!");
+                etanggalapprove.requestFocus();
+            } else {
+                Intent i = new Intent(getApplicationContext(), ApprovalActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -101,12 +98,12 @@ public class Persetujuan_Cuti_Besar extends AppCompatActivity implements View.On
         }
 
         public void reject1 (View view){
-            Intent intent = new Intent(Persetujuan_Cuti_Besar.this, Keterangan_Penolakan.class);
+            Intent intent = new Intent(PersetujuanCutiBesarActivity.this, PenolakanActivity.class);
             startActivity(intent);
         }
 
         public void approval1 (View view){
-            Intent intent = new Intent(Persetujuan_Cuti_Besar.this, Keterangan_Approval.class);
+            Intent intent = new Intent(PersetujuanCutiBesarActivity.this, ApprovalActivity.class);
             startActivity(intent);
         }
     }

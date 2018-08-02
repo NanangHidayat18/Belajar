@@ -11,7 +11,7 @@ import android.view.View;
 
 import java.util.Calendar;
 
-public class Persetujuan_Hamil extends AppCompatActivity implements View.OnClickListener{
+public class PersetujuanHamilActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button button1, button2;
     EditText etanggalapprove;
@@ -40,7 +40,7 @@ public class Persetujuan_Hamil extends AppCompatActivity implements View.OnClick
                     etanggalapprove.setError("Tanggal diperlukan!");
                     etanggalapprove.requestFocus();
                 } else {
-                    Intent i = new Intent(getApplicationContext(), Keterangan_Approval.class);
+                    Intent i = new Intent(getApplicationContext(), ApprovalActivity.class);
                     startActivity(i);
                 }
             }
@@ -54,7 +54,7 @@ public class Persetujuan_Hamil extends AppCompatActivity implements View.OnClick
                     etanggalapprove.setError("Tanggal diperlukan!");
                     etanggalapprove.requestFocus();
                 } else {
-                    Intent i = new Intent(getApplicationContext(), Keterangan_Approval.class);
+                    Intent i = new Intent(getApplicationContext(), ApprovalActivity.class);
                     startActivity(i);
                 }
             }
@@ -84,12 +84,12 @@ public class Persetujuan_Hamil extends AppCompatActivity implements View.OnClick
     }
 
     public void reject1 (View view){
-        Intent intent = new Intent(Persetujuan_Hamil.this, Keterangan_Penolakan.class);
+        Intent intent = new Intent(PersetujuanHamilActivity.this, PenolakanActivity.class);
         startActivity(intent);
     }
 
     public void approval1 (View view){
-        Intent intent = new Intent(Persetujuan_Hamil.this, Keterangan_Approval.class);
+        Intent intent = new Intent(PersetujuanHamilActivity.this, ApprovalActivity.class);
         startActivity(intent);
     }
 }
